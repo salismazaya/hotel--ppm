@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_messages"
+        android:icon="@drawable/ic_buy"
+        android:title="Order" />
+
+    <item
+        android:id="@+id/nav_orders"
+        android:icon="@drawable/ic_my_order"
+        android:title="Pesanan Saya" />
+
+    <item
+        android:id="@+id/nav_account"
+        android:icon="@drawable/ic_account"
+        android:title="Akun" />
+
+</menu>
