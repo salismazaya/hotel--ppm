@@ -63,6 +63,7 @@
                 android:src="@drawable/ic_notifications"
                 app:tint="#FFFFFF" />
         </LinearLayout>
+
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.core.widget.NestedScrollView
@@ -92,7 +93,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Kategori Hotel"
+                android:text="Kategori otel"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="#212121"
