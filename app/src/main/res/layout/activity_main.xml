@@ -13,7 +13,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#0288D1"
+        android:background="#121212"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
