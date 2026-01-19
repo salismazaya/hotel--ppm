@@ -2,12 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/nav_messages"
+        android:id="@+id/nav_order"
         android:icon="@drawable/ic_buy"
         android:title="Order" />
 
     <item
-        android:id="@+id/nav_orders"
+        android:id="@+id/nav_my_order"
         android:icon="@drawable/ic_my_order"
         android:title="Pesanan Saya" />
 

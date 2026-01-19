@@ -25,7 +25,7 @@
             android:background="#121212"
             android:layout_marginBottom="10dp">
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/imgCategory"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

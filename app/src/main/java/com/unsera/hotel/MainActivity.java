@@ -2,43 +2,37 @@ package com.unsera.hotel;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.GridView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
-import com.unsera.hotel.adapter.KategoriAdapter;
-import com.unsera.hotel.api.NinjaApiService;
-import com.unsera.hotel.api.RetrofitClient;
-import com.unsera.hotel.api.schemas.KategoriOut;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.unsera.hotel.helpers.TokenManager;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
 public class MainActivity extends AppCompatActivity {
+    private  void changeFragment(Fragment fragment) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.frame, fragment);
+        ft.commit();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        TokenManager tokenManager = new TokenManager(this);
-        String token = tokenManager.getToken();
-        if (token == null) {
-            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-            startActivity(intent);
-            finish();
-            return;
-        }
 
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        changeFragment(new MainFragment());
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -46,26 +40,22 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-//        KategoriAdapter kategoriAdapter = new KategoriAdapter(this, )
-//        String token = TokenManager()
-        NinjaApiService apiService = RetrofitClient.getApiService(token);
-
-        apiService.listKategori().enqueue(new Callback<List<KategoriOut>>() {
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
-            public void onResponse(Call<List<KategoriOut>> call, Response<List<KategoriOut>> response) {
-                if (response.isSuccessful()) {
-                    ArrayList<KategoriOut> kategoriOuts = (ArrayList<KategoriOut>) response.body();
-                    KategoriAdapter adapter = new KategoriAdapter(MainActivity.this, kategoriOuts);
-                    GridView gridView = findViewById(R.id.grid_view);
-                    gridView.setAdapter(adapter);
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                if (menuItem.getItemId() == R.id.nav_my_order) {
+                    changeFragment(new MyOrder());
+                    return true;
+                } else if (menuItem.getItemId() == R.id.nav_order) {
+                    changeFragment(new MainFragment());
+                    return  true;
+                } else {
+                    return  false;
                 }
             }
-
-            @Override
-            public void onFailure(Call<List<KategoriOut>> call, Throwable t) {
-
-            }
         });
+
     }
 
 }

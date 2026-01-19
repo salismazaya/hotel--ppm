@@ -2,15 +2,20 @@ package com.unsera.hotel.adapter;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.unsera.hotel.KamarActivity;
+import com.unsera.hotel.LoginActivity;
 import com.unsera.hotel.R;
+import com.unsera.hotel.RegisterActivity;
 import com.unsera.hotel.api.schemas.KategoriOut;
 
 import java.util.ArrayList;
@@ -31,7 +36,7 @@ public class KategoriAdapter extends ArrayAdapter<KategoriOut> {
         KategoriOut model = getItem(position);
 
         TextView textView = itemView.findViewById(R.id.tvCategoryName);
-        ImageView imageView = itemView.findViewById(R.id.imgCategory);
+        ImageButton imageView = itemView.findViewById(R.id.imgCategory);
 
         if (model != null) {
             textView.setText(model.nama);
@@ -40,6 +45,11 @@ public class KategoriAdapter extends ArrayAdapter<KategoriOut> {
                     .placeholder(R.drawable.standard)
                     .error(R.drawable.standard)
                     .into(imageView);
+
+            imageView.setOnClickListener(v -> {
+                Intent intent = new Intent(getContext(), KamarActivity.class);
+                getContext().startActivity(intent);
+            });
         }
 
         return itemView;
