@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    app:cardBackgroundColor="#1E1E1E"
+    app:strokeColor="#D4AF37"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <!-- IMAGE -->
+        <ImageView
+            android:id="@+id/imgRoom"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/standard"
+            android:scaleType="centerCrop"/>
+
+        <!-- INFO -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:id="@+id/tvRoomName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Standard Room"
+                android:textColor="#D4AF37"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <!-- CHECK IN -->
+            <TextView
+                android:id="@+id/tvCheckIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Check-in : 12 Jan 2026"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"/>
+
+            <!-- CHECK OUT -->
+            <TextView
+                android:id="@+id/tvCheckOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Check-out : 14 Jan 2026"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"/>
+
+            <!-- STATUS -->
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paid"
+                android:textColor="#4CAF50"
+                android:textSize="13sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- PRICE -->
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp 1.200.000"
+            android:textColor="#D4AF37"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
