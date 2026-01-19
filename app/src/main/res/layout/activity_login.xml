@@ -12,7 +12,7 @@
         android:layout_width="155dp"
         android:layout_height="155dp"
         android:layout_marginTop="64dp"
-        android:src="@drawable/LogoUnseraHotel"
+        android:src="@drawable/logo"
         android:contentDescription="Logo Hotel"
         android:scaleType="centerInside"
         app:layout_constraintTop_toTopOf="parent"
