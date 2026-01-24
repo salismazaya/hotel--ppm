@@ -270,18 +270,21 @@
     </ScrollView>
 
     <!-- BUTTON PESAN -->
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnPesan"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Pesan Sekarang"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Pilih Tanggal Menginap"
         android:textAllCaps="false"
+        android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="#121212"
+        android:textColor="#D4AF37"
         android:layout_margin="16dp"
+        app:cornerRadius="16dp"
+        app:backgroundTint="#121212"
+        app:elevation="6dp"
+        app:rippleColor="#FFF3C0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
