@@ -274,7 +274,7 @@
         android:id="@+id/btnPesan"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:text="Pilih Tanggal Menginap"
+        android:text="Pesan Sekarang"
         android:textAllCaps="false"
         android:textSize="16sp"
         android:textStyle="bold"
