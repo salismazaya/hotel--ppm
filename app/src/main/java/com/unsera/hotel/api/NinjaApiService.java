@@ -10,6 +10,7 @@ import com.unsera.hotel.api.schemas.PesananIn;
 import com.unsera.hotel.api.schemas.RegisterIn;
 import com.unsera.hotel.api.schemas.RegisterOut;
 import com.unsera.hotel.api.schemas.TokenOut;
+import com.unsera.hotel.api.schemas.UserOut;
 import com.unsera.hotel.api.schemas.UserProfileOut;
 import com.unsera.hotel.api.schemas.UserUpdateIn;
 
@@ -62,13 +63,13 @@ public interface NinjaApiService {
 
     @GET("api/pesanan-saya")
     Call<List<MyPesananOut>> cekPesananSaya(
-            @Header("Authorization") String token
     );
 
     // --- Profile ---
+    @GET("api/me")
+    Call<UserOut> getMe();
     @PATCH("api/user/update")
     Call<UserProfileOut> updateProfile(
-            @Header("Authorization") String token,
             @Body UserUpdateIn body
     );
 
