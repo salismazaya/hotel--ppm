@@ -47,12 +47,9 @@ public class MainFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Cek token seperti sebelumnya
         TokenManager tokenManager = new TokenManager(requireContext());
         String token = tokenManager.getToken();
         if (token == null) {
-
-                // Fallback: jika login masih Activity, buka LoginActivity dan finish Activity host
                 Intent intent = new Intent(requireActivity(), LoginActivity.class);
                 startActivity(intent);
                 requireActivity().finish();

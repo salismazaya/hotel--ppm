@@ -43,17 +43,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bobby Ertanto Purba"
+                    android:text="Nama"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold"
+                    android:id="@+id/namaUser"
                     android:textSize="18sp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Premium Member"
-                    android:textColor="#D4AF37"
-                    android:textSize="14sp"/>
             </LinearLayout>
 
             <ImageView
