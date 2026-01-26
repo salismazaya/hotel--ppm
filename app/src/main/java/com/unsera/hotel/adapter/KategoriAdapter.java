@@ -26,8 +26,12 @@ public class KategoriAdapter extends ArrayAdapter<KategoriOut> {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public long getItemId(int position) {
+        return getItem(position).id;
+    }
 
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
         View itemView = convertView;
         if (itemView == null) {
             itemView = LayoutInflater.from(getContext()).inflate(R.layout.item_hotel_category, parent, false);
@@ -48,6 +52,8 @@ public class KategoriAdapter extends ArrayAdapter<KategoriOut> {
 
             imageView.setOnClickListener(v -> {
                 Intent intent = new Intent(getContext(), KamarActivity.class);
+                Integer kategoriId = getItem(position).id;
+                intent.putExtra("KATEGORI_ID", kategoriId);
                 getContext().startActivity(intent);
             });
         }

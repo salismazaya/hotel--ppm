@@ -16,7 +16,6 @@ import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
 
-// PENTING: Gunakan extends BaseAdapter, bukan implements ListAdapter
 public class MyOrderAdapter extends BaseAdapter {
     private List<MyPesananOut> myOrders;
     private Activity activity;

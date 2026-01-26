@@ -1,9 +1,9 @@
 package com.unsera.hotel.api.schemas;
 
 public class KamarOut {
-    int id;
-    String nama;
+    public int id;
+    public String nama;
     KategoriOut kategori;
-    String deskripsi;
+    public  String deskripsi;
     int harga;
 }

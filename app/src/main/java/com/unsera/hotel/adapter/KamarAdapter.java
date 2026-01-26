@@ -36,11 +36,10 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        String tipeKamar = tipeKamarList.get(position);
+//        String tipeKamar = tipeKamarList.get(position);
 
         holder.cardKamar.setOnClickListener(v -> {
             Intent intent = new Intent(context, KamarActivity.class);
-            intent.putExtra("TIPE_KAMAR", tipeKamar);
             context.startActivity(intent);
         });
     }

@@ -2,6 +2,7 @@ package com.unsera.hotel;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -76,14 +77,29 @@ public class LoginActivity extends AppCompatActivity {
 
                 Toast.makeText(LoginActivity.this, "Login berhasil!", Toast.LENGTH_SHORT).show();
                 String token = response.body().token;
-
+//
                 TokenManager tokenManager = new TokenManager(getApplicationContext());
                 tokenManager.saveToken(token);
 
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+                Log.d("CURRENT_TOKEN", tokenManager.getToken());
+//
+//                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//                startActivity(intent);
+//                finish();
+
+                // Gunakan Handler untuk menunda finish() selama 2 detik (2000ms)
+                new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Kode di dalam sini akan dijalankan setelah jeda 2 detik
+//                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//                         startActivity(intent);
+                        finishAffinity();
+                        System.exit(0);
+                    }
+                }, 2000); // 2000 milidetik = 2 detik
             }
+
 
             @Override
             public void onFailure(Call<TokenOut> call, Throwable t) {

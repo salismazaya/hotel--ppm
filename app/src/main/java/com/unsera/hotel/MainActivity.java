@@ -71,6 +71,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        init();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        init();
         changeFragment(new MainFragment());
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);

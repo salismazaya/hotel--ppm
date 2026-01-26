@@ -2,6 +2,7 @@ package com.unsera.hotel;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,6 +73,7 @@ public class MainFragment extends Fragment {
             @Override
             public void onResponse(Call<List<KategoriOut>> call, Response<List<KategoriOut>> response) {
                 if (response.isSuccessful() && response.body() != null) {
+
                     ArrayList<KategoriOut> kategoriOuts = new ArrayList<>(response.body());
                     KategoriAdapter adapter = new KategoriAdapter(requireContext(), kategoriOuts);
                     gridView.setAdapter(adapter);
@@ -81,7 +83,10 @@ public class MainFragment extends Fragment {
                     // ==========================
                     gridView.setOnItemClickListener((parent, view1, position, id) -> {
                         Intent intent = new Intent(requireActivity(), KamarActivity.class);
-                        startActivity(intent);
+                        Integer kategoriId = response.body().get(position).id;                        intent.putExtra("KATEGORI_ID", id);
+                        intent.putExtra("KATEGORI_ID", kategoriId);
+                        Log.d("KATEGORI", kategoriId.toString());
+//                        startActivity(intent);
                     });
 
                 } else {

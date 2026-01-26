@@ -39,9 +39,6 @@ public interface NinjaApiService {
 
     @GET("api/kamar")
     Call<List<KamarOut>> listKamar(
-            @Query("nama") String nama,
-            @Query("min_harga") Integer minHarga,
-            @Query("max_harga") Integer maxHarga,
             @Query("kategori_id") Integer kategoriId
     );
 

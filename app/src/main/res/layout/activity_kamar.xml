@@ -40,23 +40,10 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- STANDARD -->
-            <include layout="@layout/item_kamar_standard"/>
-
-            <!-- DELUXE -->
-            <include layout="@layout/item_kamar_deluxe"/>
-
-            <!-- SUPERIOR -->
-            <include layout="@layout/item_kamar_superior"/>
-
-            <!-- SUITE -->
-            <include layout="@layout/item_kamar_suite"/>
-
-            <!-- TWIN -->
-            <include layout="@layout/item_kamar_twin"/>
-
-            <!-- PRESIDENTIAL -->
-            <include layout="@layout/item_kamar_presidential"/>
+            <ListView
+                android:id="@+id/lvKamar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

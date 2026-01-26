@@ -42,12 +42,14 @@
                 android:text="Standard Room"
                 android:textColor="#D4AF37"
                 android:textSize="16sp"
+                android:id="@+id/roomName"
                 android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Kamar nyaman dengan fasilitas standar hotel berbintang."
+                android:id="@+id/tvDeskripsi"
                 android:textColor="#E0E0E0"
                 android:textSize="13sp"
                 android:layout_marginTop="6dp"/>
