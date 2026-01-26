@@ -41,6 +41,7 @@
 
             <!-- FOTO KAMAR -->
             <ImageView
+                android:id="@+id/imageKamar"
                 android:layout_width="match_parent"
                 android:layout_height="260dp"
                 android:src="@drawable/standard"
@@ -54,6 +55,7 @@
 
                 <!-- NAMA + RATING -->
                 <TextView
+                    android:id="@+id/tvNamaKamar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Standard Room"
@@ -71,6 +73,7 @@
 
                 <!-- HARGA -->
                 <TextView
+                    android:id="@+id/tvHarga"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rp 450.000 / malam"
@@ -90,6 +93,7 @@
                     android:layout_marginTop="6dp"/>
 
                 <TextView
+                    android:id="@+id/tvDeskripsi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Standard Room menawarkan kenyamanan dengan desain modern, cocok untuk perjalanan bisnis maupun liburan. Dilengkapi fasilitas utama untuk pengalaman menginap yang menyenangkan."

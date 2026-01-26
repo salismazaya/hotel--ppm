@@ -39,7 +39,6 @@ public class MainFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        // Inflate the fragment layout (lihat contoh fragment_main.xml di bawah)
         return inflater.inflate(R.layout.fragment_main, container, false);
     }
 
@@ -50,10 +49,9 @@ public class MainFragment extends Fragment {
         TokenManager tokenManager = new TokenManager(requireContext());
         String token = tokenManager.getToken();
         if (token == null) {
-                Intent intent = new Intent(requireActivity(), LoginActivity.class);
-                startActivity(intent);
-                requireActivity().finish();
-
+            Intent intent = new Intent(requireActivity(), LoginActivity.class);
+            startActivity(intent);
+            requireActivity().finish();
         }
 
         EdgeToEdge.enable(requireActivity());
@@ -77,6 +75,15 @@ public class MainFragment extends Fragment {
                     ArrayList<KategoriOut> kategoriOuts = new ArrayList<>(response.body());
                     KategoriAdapter adapter = new KategoriAdapter(requireContext(), kategoriOuts);
                     gridView.setAdapter(adapter);
+
+                    // ==========================
+                    // ✅ TAMBAHAN KODE KLIK ITEM
+                    // ==========================
+                    gridView.setOnItemClickListener((parent, view1, position, id) -> {
+                        Intent intent = new Intent(requireActivity(), KamarActivity.class);
+                        startActivity(intent);
+                    });
+
                 } else {
                     Toast.makeText(requireContext(), "Gagal memuat kategori", Toast.LENGTH_SHORT).show();
                 }
