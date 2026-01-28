@@ -65,7 +65,6 @@ public class MyOrder extends Fragment {
             @Override
             public void onResponse(Call<List<MyPesananOut>> call, Response<List<MyPesananOut>> response) {
                 if (response.isSuccessful()) {
-                    System.out.println(response.body());
                     lvPesanan.setAdapter(new MyOrderAdapter(getActivity(), response.body()));
                 }
             }

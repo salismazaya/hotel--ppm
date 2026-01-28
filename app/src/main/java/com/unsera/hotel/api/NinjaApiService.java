@@ -48,13 +48,11 @@ public interface NinjaApiService {
     // --- Pesanan (Membutuhkan Token Auth) ---
     @POST("api/pesanan")
     Call<PesananCreateOut> buatPesanan(
-            @Header("Authorization") String token,
             @Body PesananIn body
     );
 
     @DELETE("api/pesanan/{pesanan_id}")
     Call<MessageOut> batalkanPesanan(
-            @Header("Authorization") String token,
             @Path("pesanan_id") int pesananId
     );
 

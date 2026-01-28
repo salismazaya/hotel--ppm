@@ -5,5 +5,6 @@ public class PesananCreateOut {
     int id;
     @SerializedName("kamar_nama") String kamarNama;
     @SerializedName("harga_total") int hargaTotal;
-    @SerializedName("payment_link") String paymentLink;
+    @SerializedName("payment_link")
+    public String paymentLink;
 }

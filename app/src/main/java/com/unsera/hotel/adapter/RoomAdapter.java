@@ -1,7 +1,9 @@
 package com.unsera.hotel.adapter;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +48,7 @@ public class RoomAdapter extends BaseAdapter {
         return rooms.get(position).id;
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // 1. Daur ulang view (Recycling) agar tidak berat saat scroll
@@ -57,14 +60,18 @@ public class RoomAdapter extends BaseAdapter {
 
         TextView tvRoomName = convertView.findViewById(R.id.roomName);
         TextView tvDeskripsi = convertView.findViewById(R.id.tvDeskripsi);
+        TextView tvHarga = convertView.findViewById(R.id.tvHarga);
 
         KamarOut room = getItem(position);
 
         tvRoomName.setText(room.nama);
         tvDeskripsi.setText(room.deskripsi);
+        tvHarga.setText("Rp. " + String.valueOf(room.harga) + "/malam");
 
         convertView.findViewById(R.id.cardKamarStandard).setOnClickListener(v -> {
             Intent intent = new Intent(activity, DetailKamarActivity.class);
+            Integer kamarId = room.id;
+            intent.putExtra("KAMAR_ID", kamarId);
             activity.startActivity(intent);
         });
 

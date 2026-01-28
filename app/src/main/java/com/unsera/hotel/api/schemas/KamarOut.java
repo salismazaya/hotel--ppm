@@ -5,5 +5,6 @@ public class KamarOut {
     public String nama;
     KategoriOut kategori;
     public  String deskripsi;
-    int harga;
+    public  int harga;
+    public String[] gambars;
 }

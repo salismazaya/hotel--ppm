@@ -55,12 +55,13 @@
                 android:layout_marginTop="6dp"/>
 
             <TextView
+                android:id="@+id/tvHarga"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="Rp 450.000 / malam"
                 android:textColor="#D4AF37"
-                android:textStyle="bold"
-                android:layout_marginTop="8dp"/>
+                android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>

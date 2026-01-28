@@ -6,4 +6,10 @@ public class PesananIn {
     @SerializedName("kamar_id") int kamarId;
     @SerializedName("mulai_tanggal") String mulaiTanggal; // Format: YYYY-MM-DD
     @SerializedName("berakhir_tanggal") String berakhirTanggal;
+
+    public PesananIn(int kamarId, String mulaiTanggal, String berakhirTanggal) {
+        this.kamarId = kamarId;
+        this.mulaiTanggal = mulaiTanggal;
+        this.berakhirTanggal = berakhirTanggal;
+    }
 }

@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
-    <!-- TOOLBAR -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarDetail"
         android:layout_width="0dp"
@@ -39,13 +38,11 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- FOTO KAMAR -->
-            <ImageView
-                android:id="@+id/imageKamar"
+            <!-- FOTO KAMAR (SLIDER) -->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPagerKamar"
                 android:layout_width="match_parent"
-                android:layout_height="260dp"
-                android:src="@drawable/standard"
-                android:scaleType="centerCrop"/>
+                android:layout_height="260dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -101,92 +98,9 @@
                     android:justificationMode="inter_word"
                     android:lineSpacingExtra="4dp"
                     android:textSize="14sp"
-                    android:fontFamily="sans-serif"
                     android:layout_marginTop="12dp"/>
 
-                <!-- GARIS -->
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#E0E0E0"
-                    android:layout_marginVertical="16dp"/>
-
-                <!-- DETAIL KAMAR -->
-                <!-- HEADER DETAIL KAMAR -->
-                <LinearLayout
-                    android:id="@+id/headerDetail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:padding="0dp"
-                    android:clickable="true"
-                    android:focusable="true">
-
-                </LinearLayout>
-
-                <!-- ISI DETAIL (HIDDEN) -->
-                <LinearLayout
-                    android:id="@+id/contentDetail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="12dp"
-                    android:visibility="gone">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="• Luas: 24 m²\n• Kapasitas: 2 Dewasa\n• Kasur: Queen Bed\n• Pemandangan: Kota"
-                        android:textSize="14sp"
-                        android:textColor="#555555"/>
-                </LinearLayout>
-
-
-                <!-- GARIS -->
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#E0E0E0"
-                    android:layout_marginVertical="16dp"/>
-
-                <LinearLayout
-                    android:id="@+id/contentFasilitas"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:visibility="gone">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="• WiFi Gratis\n• AC\n• TV LED\n• Air Panas\n• Room Service"
-                        android:textSize="14sp"/>
-                </LinearLayout>
-
-
-
-                <LinearLayout
-                    android:id="@+id/contentInformasiTambahan"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:visibility="gone">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="• Check-in mulai pukul 14.00\n• Check-out maksimal pukul 12.00\n• Dilarang merokok di dalam kamar\n• Hewan peliharaan tidak diperbolehkan\n• Tersedia layanan laundry berbayar"
-                        android:textSize="14sp"
-                        android:textColor="#555555"
-                        android:lineSpacingExtra="4dp"/>
-                </LinearLayout>
-
-
+                <!-- (bagian bawah tetap) -->
 
             </LinearLayout>
         </LinearLayout>
