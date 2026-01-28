@@ -4,8 +4,10 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,6 +54,8 @@ public class DetailKamarActivity extends AppCompatActivity {
         hargaKamar = findViewById(R.id.tvHarga);
         deskripsiKamar = findViewById(R.id.tvDeskripsi);
         btnOrder = findViewById(R.id.btnPesan);
+        ProgressBar progressBar = findViewById(R.id.progressBar);
+
 
         Integer kamarId = getIntent().getIntExtra("KAMAR_ID", 0);
 
@@ -112,11 +116,14 @@ public class DetailKamarActivity extends AppCompatActivity {
         });
 
         dateRangePicker.addOnPositiveButtonClickListener(selection -> {
+            progressBar.setVisibility(View.VISIBLE);
+
+
             Long startDate = selection.first;
             Long endDate = selection.second;
 
-            Log.d("DATE_RANGE", "Start: " + startDate);
-            Log.d("DATE_RANGE", "End: " + endDate);
+//            Log.d("DATE_RANGE", "Start: " + startDate);
+//            Log.d("DATE_RANGE", "End: " + endDate);
 
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 

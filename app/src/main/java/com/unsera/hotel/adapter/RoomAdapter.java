@@ -3,13 +3,16 @@ package com.unsera.hotel.adapter;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.media.Image;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.unsera.hotel.DetailKamarActivity;
 import com.unsera.hotel.KamarActivity;
 import com.unsera.hotel.R;
@@ -51,18 +54,28 @@ public class RoomAdapter extends BaseAdapter {
     @SuppressLint("SetTextI18n")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // 1. Daur ulang view (Recycling) agar tidak berat saat scroll
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.item_kamar_standard, parent, false);
         }
 
-        // 2. Binding Data
-
         TextView tvRoomName = convertView.findViewById(R.id.roomName);
         TextView tvDeskripsi = convertView.findViewById(R.id.tvDeskripsi);
         TextView tvHarga = convertView.findViewById(R.id.tvHarga);
+        ImageView ivGambar = convertView.findViewById(R.id.imgKamar);
+
+
 
         KamarOut room = getItem(position);
+
+        if (room.gambars.length >= 1) {
+            Glide.with(activity)
+                    .load("https://hotel.presensee.cloud" + room.gambars[0]) // URL gambar
+                    .placeholder(R.drawable.placholder)           // optional
+//                .error(R.drawable.error_image)                  // optional
+                    .into(ivGambar);
+        }
+
+
 
         tvRoomName.setText(room.nama);
         tvDeskripsi.setText(room.deskripsi);
